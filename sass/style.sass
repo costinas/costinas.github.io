@@ -1,0 +1,195 @@
+//////// IMPORTS ////////////////////////////
+
+@import 'normalize'
+@import 'bourbon/bourbon'
+@import 'variables'
+@import 'components'
+@import 'fonts'
+
+///////////////////////////////////////////////
+
+*, *::after, *::before
+  box-sizing: border-box
+
+body
+  color: $modal-bg
+  +linear-gradient(to left, #517fa4, #243949)
+  
+  &.overflow-hidden
+    // used when modal is visible
+    overflow: hidden
+
+header
+  color: rgba(255, 255, 255, 0.85)
+  text-align: center
+  margin: 2em auto
+  padding: 0 1em
+  max-width: 440px
+
++MQ(M)
+  header
+    margin-top: 3.6em
+
++MQ(L)
+  header
+    margin-top: 5.6em
+
+ul
+  list-style-type: none
+  +padding(0)
+  li
+    position: relative
+
+.container
+  position: relative
+  margin-top: 40px
+  text-align: center
+  +user-select(none)
+
+.box
+  position: relative
+  display: block
+  +margin(0 auto)
+  background: $box-bg
+  max-width: $mobile-box-width
+  height: $mobile-box-height
+  +transition(all .3s $ease-in-out-sine 0s)
+  +font-smoothing
+  cursor: pointer
+
+  &:hover, &.hover
+    max-width: $mobile-box-width + 8px
+    height: $mobile-box-height + 8px
+    box-shadow: $box-shadow
+    border-radius: $radius
+    +margin(10px auto)
+    h2
+      //color: rgba(247,247,247, .8)
+  
+  &.to-circle
+    max-width: $mobile-box-height + 60px
+    height: $mobile-box-height
+    background-color: $modal-bg
+    border-radius: $radius
+    +margin(10px auto)
+
+    h2
+      color: $modal-bg
+      text-shadow: none
+      visibility: hidden
+      opacity: 0
+      font-size: 0
+  
+  h2
+    position: absolute
+    font-family: Montserrat, sans-serif
+    +padding(8px 20px)
+    color: #fff
+    //text-shadow: 1px 4px 5px #FED376, 0 0 0 #000, 1px 4px 5px #FED376
+    text-transform: uppercase
+    visibility: visible
+    opacity: 1
+    +transition(color .3s $ease-in-out-sine, visibility 0s .3s, opacity 0s .3s)
+    font:
+      size: $mobile-box-height / 4
+      weight: 700
+    
+.cd-modal-action
+  //position: relative
+  .cd-modal-bg
+    background-color: $modal-bg
+    position: absolute
+    z-index: 1
+    height: $mobile-box-height
+    width: $mobile-box-height + 60px
+    border-radius: $radius
+    opacity: 0
+    visibility: hidden
+    //+transform(translateX(-($mobile-box-height + 60px)/2) translateY(-$mobile-box-height - 18px))
+    +transition(visibility 0s .5s)
+    top: 4px
+
+    &.is-visible
+      opacity: 1
+      visibility: visible
+
+@media (max-width: $M)
+
+  .cd-modal-bg
+    +transform(translateX(-($mobile-box-height + 60px)/2))
+  .box-1
+    +border-top-radius($radius)
+  .box-4
+    +border-bottom-radius($radius)
+      
+      
++MQ(M)  
+  
+  li
+    display: inline-block
+
+  .box
+    display: inline-block
+    +size($box-size)
+    +margin(50px -3px)
+
+    &:hover, &.hover
+      +size($box-size + 8px)
+      +margin(46px 10px)
+    
+    h2
+      +padding(10px 10px)
+      font-size: $box-size / 6
+    
+    &.to-circle
+      max-width: $box-size - 30px
+      +size($box-size - 30px)
+      +margin(46px 10px)
+      color: transparent
+      +transform(translateY(-15px))
+  
+  .cd-modal-action
+    .cd-modal-bg
+      +size($box-size - 30px)
+      //+transform(translateY(-$box-size - 35px) translateX(-$box-size/2 + 15px))
+      top: 65px
+      left: 30px
+
+  .box-1
+    +border-left-radius($radius)
+  .box-4
+    +border-right-radius($radius)
+      
+      
++MQ(L)
+  
+  $box-size: 200px
+  
+  .box
+    +size($box-size)
+
+    &:hover, &.hover
+      +size($box-size + 8px)
+
+    &.to-circle
+      max-width: $box-size - 30px
+      +size($box-size - 30px)
+    
+    h2
+      +padding(14px 16px)
+      font-size: $box-size / 6
+      
+  .cd-modal-action
+    .cd-modal-bg
+      +size($box-size - 30px)
+      //+transform(translateY(-$box-size - 35px) translateX(-$box-size/2 + 15px))
+
+
+/////// STYLES PER PAGE //////////////////////////////////////////////////////////////////// 
+
+@import 'modal'
+@import 'work'
+@import 'about'
+@import 'contact'
+
+////////////////////////////////////////////////////////////////////////////////////////////

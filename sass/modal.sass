@@ -1,0 +1,80 @@
+.cd-modal
+  position: fixed
+  top: 0
+  left: 0
+  +size(100%)
+  visibility: hidden
+  opacity: 0
+  pointer-events: none
+  +transition(visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s)
+
+  &::after
+    // gradient overlay at bottom of modal window
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 60px
+    pointer-events: none
+    +linear-gradient(to top, rgba($modal-bg, 1), rgba($modal-bg, 0))
+    background-color: transparent
+
+  .cd-modal-content
+    +size(100%)
+    padding: 3em 5%
+    text-align: left
+    overflow-y: auto
+    +font-smoothing
+    color: $white
+
+  p
+    +margin(2em 0)
+
+  .modal-is-visible &
+    z-index: 1
+    visibility: visible
+    opacity: 1
+    pointer-events: auto
+    +transition(visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s)
+
+    .cd-modal-content
+      -webkit-overflow-scrolling: touch
+
+  +MQ(M)
+    .cd-modal-content
+      padding: 4em 10%
+
+  +MQ(L)
+    .cd-modal-content
+      padding: 6em 20%
+
+.cd-modal-close
+  position: fixed
+  z-index: 1
+  top: 20px
+  right: 5%
+  +size(50px)
+  border-radius: 50%
+  background: rgba(black, 0.3) url(../img/cd-icon-close.svg) no-repeat center center
+  // image replacement
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  visibility: hidden
+  opacity: 0
+  +transform(translateZ(0))
+  +transform(scale(0))
+  +transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s)
+
+  .no-touch, &:hover
+    background-color: rgba(black, 0.5)
+
+  .modal-is-visible &
+    visibility: visible
+    opacity: 1
+    +transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s)
+    +transform(scale(1))
+
+  +MQ(M)
+    top: 70px

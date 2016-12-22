@@ -1,0 +1,33 @@
+.big-preview
+  +padding(2.2em 0)
+  border-bottom: 3px dashed $dashed-border-color
+
+  .img-link
+    font-size: 2rem
+    border: 2px solid $accent
+    border-radius: $radius
+    +padding(0 0.4em)
+    
+
+  img
+    +size(100%)
+    box-shadow: 0 0 8px #222
+    border-radius: $radius
+    +transition(box-shadow .3s)
+
+    &:hover
+      opacity: 0.8
+
+    
+
+  .tech-list
+    padding-left: 0
+    li  
+      display: inline-block 
+      background: #F7F7F7
+      border-radius: $radius
+      border: 1px solid #E0E0E0
+      text-transform: uppercase
+      margin-top: 0.25em
+      +padding(0.1em 0.4em)
+      white-space: nowrap

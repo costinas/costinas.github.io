@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Catalin Costinas | Front-End Developer & UI/UX Designer based in Cluj-Napoca</title>
+  
+  <meta name="author" content="Catalin Costinas">
+  <meta name="description" content="Front-End Web Developer Portfolio Cluj">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="BHFT00LD8fQLYF2eLBnVHPoYLFTe0JMwE2EgW4UrKHQ" />
+  <meta property="og:image" content="http://devuiux.github.io/img/preview2.png" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <p>Hi, my name is Catalin Costinas, I'm a self-taught Front-End Developer based in <a href="https://www.google.ro/maps/place/Cluj-Napoca" target="_blank">Cluj-Napoca</a> and this is my portfolio.</p>
+  </header>
+  <section class="cd-section">
+    <ul class="container cd-modal-action">
+      <li>
+        <a class="box box-1" data-type="modal-trigger" name="work"><h2 class="title">work</h2></a>
+        <span class="cd-modal-bg"></span>
+      </li>
+      <li>
+        <a class="box box-2" data-type="modal-trigger" name="about"><h2 class="title">about</h2></a>
+        <span class="cd-modal-bg"></span>
+      </li>
+      <li>
+        <a class="box box-3" data-type="modal-trigger" name="code"><h2 class="title">code</h2></a>
+        <span class="cd-modal-bg"></span>
+      </li>
+      <li>
+        <a class="box box-4" data-type="modal-trigger" name="contact"><h2 class="title">contact</h2></a>
+        <span class="cd-modal-bg"></span>
+      </li>
+    </ul>
+    <div class="cd-modal">
+      <div class="cd-modal-content"></div>
+    </div>
+    <a href="#" class="cd-modal-close">Close</a>
+  </section>
+
+  <script type="text/ractive" id="template">    
+
+    {{#if dataout}}
+
+        {{{dataout}}}
+
+    {{/if}}
+
+  </script>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/ractive.min.js"></script>
+  <script src="js/index.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48124692-3', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+
+</html>

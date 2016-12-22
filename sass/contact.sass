@@ -1,0 +1,214 @@
+// -------------------------------- 
+//
+//Form
+//
+//--------------------------------
+
+.cd-form
+  width: 98%
+  max-width: $M - 160px
+  // breakpoints inside partials > _layout.scss
+  margin: 4em auto
+  border-radius: $radius
+  box-shadow: $form-box-shadow
+  background-color: lighten($modal-bg, 2%)
+  +clearfix
+
+  fieldset
+    margin: 24px 0
+    border: none
+
+  div
+    // form element wrapper
+    position: relative
+    margin: 20px 0
+
+  h4, .cd-label
+    font-size: 1.3rem
+    color: darken($porcelain, 30%)
+    margin-bottom: 10px
+
+  .cd-label
+    display: block
+
+  input, textarea, select, label
+    font-family: $primary-font
+    font-size: 1.6rem
+    color: $white
+
+  input[type="text"], input[type="email"], textarea, select
+    display: block
+    width: 100%
+    +appearance(none)
+
+  input[type="text"], input[type="email"], textarea, select
+    // general style for input elements
+    padding: 12px
+    border: 1px solid darken($porcelain, 44%)
+    background-color: transparent 
+    border-radius: $radius
+    box-shadow: inset 0 1px 1px rgba(black, 0.08)
+
+    &:focus
+      outline: none
+      border-color: $accent
+      box-shadow: 0 0 5px rgba($accent, 0.2)
+
+  .cd-select
+    // select element wapper
+    position: relative
+
+    &::after
+      // arrow icon for select element
+      content: ''
+      position: absolute
+      z-index: 1
+      right: 16px
+      top: 50%
+      margin-top: -8px
+      display: block
+      width: 16px
+      height: 16px
+      background: url("../img/cd-icon-arrow.svg") no-repeat center center
+      pointer-events: none
+
+  select
+    box-shadow: 0 1px 3px rgba(black, 0.08)
+    cursor: pointer
+
+  select::-ms-expand
+    display: none
+
+  .cd-form-list
+    margin-top: 16px
+    +clearfix
+
+  textarea
+    min-height: 200px
+    resize: vertical
+    overflow: auto
+
+  input[type="submit"]
+    // button style
+    border: none
+    background: $accent
+    border-radius: $radius
+    padding: 14px 10px
+    color: $white
+    font-weight: bold
+    float: right
+    cursor: pointer
+    //box-shadow: 0 0 8px #383838
+    +font-smoothing
+    +appearance(none)
+
+    .no-touch, &:hover
+      background: #00e5ff
+
+    &:focus
+      outline: none
+      background: #00e5ff
+
+    &:active
+      +transform(scale(0.98))
+
+  [required]
+    background: url("../img/cd-required.svg") no-repeat top right
+
+  .error-message p
+    background: $error
+    color: $white
+    font-size: 1.4rem
+    text-align: center
+    +font-smoothing
+    border-radius: $radius
+    box-shadow: 0 0 8px #383838
+    padding: 16px
+
+  .error
+    border-color: $error !important
+
+  +MQ(M)
+
+    div
+      // form element wrapper
+      margin: 32px 0
+
+    fieldset
+      // reduce margin-top for first form element after the legend
+      padding: 24px 14px
+
+    h4, .cd-label
+      font-size: 1.4rem
+      margin-bottom: 10px
+
+    input[type="text"], input[type="email"], textarea, select
+      padding: 16px
+
++keyframes(cd-bounce)
+  0%, 100%
+    +transform(scale(1))
+  50%
+    +transform(scale(0.8))
+
+
+// -------------------------------- 
+//
+//Custom icons
+//
+//--------------------------------
+
+.cd-form
+  .icon input, .icon select, .icon textarea
+    padding-left: 54px !important
+  .user
+    background: url("../img/cd-icon-user.svg") no-repeat 16px center
+  [required].user
+    background: url("../img/cd-icon-user.svg") no-repeat 16px center, url("../img/cd-required.svg") no-repeat top right
+  .company
+    background: url("../img/cd-icon-company.svg") no-repeat 16px center
+  [required].company
+    background: url("../img/cd-icon-company.svg") no-repeat 16px center, url("../img/cd-required.svg") no-repeat top right
+  .email
+    background: url("../img/cd-icon-email.svg") no-repeat 16px center
+  [required].email
+    background: url("../img/cd-icon-email.svg") no-repeat 16px center, url("../img/cd-required.svg") no-repeat top right
+  .budget
+    background: url("../img/cd-icon-budget.svg") no-repeat 16px center
+  .message
+    background: url("../img/cd-icon-message.svg") no-repeat 16px 16px
+  [required].message
+    background: url("../img/cd-icon-message.svg") no-repeat 16px 16px, url("../img/cd-required.svg") no-repeat top right
+
+// -------------------------------- 
+//
+//FLoating labels 
+//
+//--------------------------------
+
+.floating-labels
+
+  div
+    margin: 28px 0
+
+  .cd-label
+    position: absolute
+    top: 16px
+    left: 16px
+    font-size: 1.6rem
+    cursor: text
+    +transition(top 0.2s, left 0.2s, font-size 0.2s)
+
+  .cd-label
+    left: 56px
+
+  .cd-label.float
+    // move label out the input field
+    font-size: 1.2rem
+    top: -16px
+    left: 0 !important
+
+  +MQ(M)
+
+    .cd-label
+      top: 20px

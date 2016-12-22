@@ -1,0 +1,46 @@
+// colors
+$modal-bg: #243949                 // modal background
+$accent: #00b8d4                   // accent & link
+
+$white: white
+$main-bg: #F7F7F7                  // home background
+
+$porcelain: #ecf0f1                // Porcelain
+$error: #e94b35                    // Cinnabar
+
+// box stuff
+$box-bg: #7FC6A4                  // box background
+$box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15)
+
+$box-size: 180px
+$mobile-box-width: 500px
+$mobile-box-height: 80px
+
+// other
+$radius: 4px
+$opacity: 0.9
+$dashed-border-color: rgba(0, 0, 0, 0.86)
+
+$form-box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15)
+
+// antialiasing mode font rendering
+=font-smoothing
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// breakpoints
+$S: 480px
+$M: 777px
+$L: 1170px
+
+// media queries
+=MQ($canvas)
+  @if $canvas == S
+    @media only screen and (min-width: $S)
+      @content
+  @else if $canvas == M
+    @media only screen and (min-width: $M)
+      @content
+  @else if $canvas == L
+    @media only screen and (min-width: $L)
+      @content

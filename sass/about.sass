@@ -1,0 +1,26 @@
+.skills
+  .progress-bar-indication
+    width: 90%
+    margin: 3em auto
+
+    $progress-meter-color: $accent
+    $progress-background: darken(white, 5)
+    $progress-color: $white
+      
+    background-color: $progress-background
+    border-radius: $radius
+    > span.meter
+      background-color: $progress-meter-color
+      background-repeat: repeat-x
+      background-size: 40px 40px
+      border-bottom-right-radius: 0
+      border-radius: $radius / 1.5
+      border-top-right-radius: 0
+      display: block
+      height: 100%
+      width: 60%
+    p
+      line-height: 2
+      color: $progress-color
+      margin: 0
+      padding: .1em .5em
