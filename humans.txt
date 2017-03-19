@@ -1,0 +1,4 @@
+/* TEAM */
+Designed & coded by: Catalin Costinas.
+Site: costinas.github.io, costinas.catalin@gmail.com
+Location: Cluj-Napoca
